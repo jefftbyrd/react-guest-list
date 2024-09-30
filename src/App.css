@@ -1,38 +1,85 @@
-.App {
+html,
+body {
   text-align: center;
+  padding: 20px;
+  box-sizing: content-box;
+  display: block;
+  background-color: lightcyan;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 9rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h2 {
+  font-size: 2.3rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+.addGuest {
+  margin-top: 60px;
+
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    margin: 20px;
+    width: 100%;
+    box-sizing: content-box;
+    gap: 20px;
+  }
+
+  input {
+    margin-left: 10px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.attending {
+  width: 130px;
+  font-size: 1rem;
+  padding: 10px !important;
+}
+
+.guestList {
+  margin-top: 60px !important;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: left;
+  flex-wrap: wrap;
+  margin: 20px;
+  width: 100%;
+  box-sizing: content-box;
+  gap: 20px;
+
+  h2 {
+    font-size: 2.3rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+  }
+
+  div {
+    border: solid black 1px;
+    padding: 20px;
+  }
+}
+
+.guestItem {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  gap: 20px;
+  background-color: white;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  button {
+    padding: 8px;
+    background-color: gray;
+    color: white;
   }
 }
