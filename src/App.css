@@ -46,13 +46,12 @@ h2 {
 }
 
 .guestList {
-  margin-top: 60px !important;
+  margin-top: 60px 20px 20px 20px !important;
   display: flex;
   flex-direction: row;
   align-items: start;
   justify-content: left;
   flex-wrap: wrap;
-  margin: 20px;
   width: 100%;
   box-sizing: content-box;
   gap: 20px;
