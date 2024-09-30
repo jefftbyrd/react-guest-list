@@ -6,7 +6,7 @@ export function GuestList() {
   const [isLoading, setIsLoading] = useState(true);
   const [firstNameInput, setFirstNameInput] = useState('');
   const [lastNameInput, setLastNameInput] = useState('');
-  const baseUrl = 'http://localhost:4000';
+  const baseUrl = 'https://w75hy3-4000.csb.app';
 
   // runs on initial render, re-renders when guests state changes
   useEffect(() => {
