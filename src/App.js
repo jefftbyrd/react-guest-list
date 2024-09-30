@@ -13,14 +13,13 @@ export function GuestList() {
     async function fetchGuests() {
       const response = await fetch(`${baseUrl}/guests`);
       const allGuests = await response.json();
-
-      setIsLoading(false);
       setGuests(allGuests);
+      setIsLoading(false);
     }
     fetchGuests().catch((error) => {
       console.log(error);
     });
-  }, [guests]);
+  }, []);
 
   if (isLoading) {
     // early return
@@ -110,9 +109,18 @@ export function GuestList() {
                           }),
                         },
                       );
+
                       const updatedGuest = await response.json();
-                      const newGuests = [...guests];
-                      setGuests(newGuests);
+                      const modifiedGuests = guests.map((guest) => {
+                        if (guest.id === updatedGuest.id) {
+                          return {
+                            ...guest,
+                            attending: !guest.attending,
+                          };
+                        }
+                        return guest;
+                      });
+                      setGuests(modifiedGuests);
                     }}
                   />
                 </form>
@@ -132,8 +140,10 @@ export function GuestList() {
                     },
                   );
                   const deletedGuest = await response.json();
-                  const newGuests = [...guests];
-                  setGuests(newGuests);
+                  const modifiedGuests = guests.filter(function (guest) {
+                    return guest.id !== deletedGuest.id;
+                  });
+                  setGuests(modifiedGuests);
                 }}
               >
                 Remove guest
