@@ -8,7 +8,7 @@ export function GuestList() {
   const [lastNameInput, setLastNameInput] = useState('');
   const baseUrl = 'https://w75hy3-4000.csb.app';
 
-  // runs on initial render, re-renders when guests state changes
+  // initial render
   useEffect(() => {
     async function fetchGuests() {
       const response = await fetch(`${baseUrl}/guests`);
@@ -109,16 +109,15 @@ export function GuestList() {
                           }),
                         },
                       );
-
                       const updatedGuest = await response.json();
-                      const modifiedGuests = guests.map((guest) => {
-                        if (guest.id === updatedGuest.id) {
+                      const modifiedGuests = guests.map((guestB) => {
+                        if (guestB.id === updatedGuest.id) {
                           return {
-                            ...guest,
-                            attending: !guest.attending,
+                            ...guestB,
+                            attending: !guestB.attending,
                           };
                         }
-                        return guest;
+                        return guestB;
                       });
                       setGuests(modifiedGuests);
                     }}
@@ -140,8 +139,8 @@ export function GuestList() {
                     },
                   );
                   const deletedGuest = await response.json();
-                  const modifiedGuests = guests.filter(function (guest) {
-                    return guest.id !== deletedGuest.id;
+                  const modifiedGuests = guests.filter(function (guestC) {
+                    return guestC.id !== deletedGuest.id;
                   });
                   setGuests(modifiedGuests);
                 }}
