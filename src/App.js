@@ -120,7 +120,7 @@ export function GuestList() {
               </div>
               {/* Display guest name */}
               <h2>
-                {guest.id}. {guest.firstName} {guest.lastName}
+                {guest.firstName} {guest.lastName}
               </h2>
               {/* Click to remove guest */}
               <button
