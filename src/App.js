@@ -53,7 +53,7 @@ export function GuestList() {
               value={lastNameInput}
               onChange={(event) => setLastNameInput(event.currentTarget.value)}
               onKeyDown={async (event) => {
-                if (event.key === 'Enter') {
+                if (event.key === 'Enter' && lastNameInput && firstNameInput) {
                   const response = await fetch(`${baseUrl}/guests`, {
                     method: 'POST',
                     headers: {
